@@ -1,0 +1,70 @@
+body {
+    background-image:url( "../app/Assets/background.jpg");
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+  }
+  
+body{
+    box-sizing: border-box !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  
+  .main_content{
+    display: flex;
+    height: 85vh;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+  }
+  .main_content_subwrapper{
+  text-align: center;
+  }
+  
+  .main_content_header{
+    font-size: 8vw;
+    margin: 0;
+    color: #fff;
+  }
+  .main_content_subheader{
+    font-size: 1.5vw;
+    margin: 0;
+    color: #fff;
+  
+  }
+  .buttons_wrapper{
+    display: flex;
+    justify-content: center;
+    gap: 1vw;
+    margin: 1vw;
+  }
+  .button_services{
+    padding: 0.8vw;
+    border-radius: 0.5vw;
+    width: 15vw;
+    font-size: 1vw;
+    border: 0.1vw solid  rgba(255, 255, 255, .4);
+  background: none;
+    /* background-color: rgba(255, 255, 255, .4); */
+  
+    cursor: pointer;
+    color: #fff;
+    font-weight: 600;
+  }
+  .button_hereus{
+    padding: 0.8vw;
+    border-radius: 0.5vw;
+    width: 15vw;
+    font-size: 1vw;
+    border: none;
+    background-color: #cc2a28;
+    cursor: pointer;
+  
+  }
+  .nav_data{
+    color: #fff;
+    z-index: 1;
+  }
+  

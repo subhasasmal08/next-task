@@ -1,13 +1,11 @@
-// "use client";
-import React from "react";
+"use client";
 import Link from "next/link";
 import "./AppNavbar.css";
-// import { useRouter } from "next/navigation";
+import { useState } from "react";
+import { usePathname } from "next/navigation";
+import { useRouter } from "next/navigation";
 
-export default function AppNavbar() {
-  // const router = useRouter();
-  // const pathname = usePathname();
-
+const AppNavbar = () => {
   const navbarArr = [
     {
       name: "Home",
@@ -34,25 +32,30 @@ export default function AppNavbar() {
       link: "/Contact",
     },
   ];
-
-  // console.log(typeof window, pathname);
-
-  // if (typeof window !== undefined) {
-  //   console.log("obje");
-  // }
+  const pathname = usePathname();
+  const router = useRouter()
+  const [active, setActive] = useState("Home");
   return (
     <div>
-      {/* {console.log("obje")} */}
-      AppNavbar
-      <nav>
-        {/* {console.log(router)} */}
-        <ul>
+      {console.log(router)}
+      <nav className="navbar">
+        <p className="header">AS/SO</p>
+
+        <ul className="navbar_ul">
           {navbarArr.map((item) => (
             <li
+              onClick={() => {
+                setActive(item.name);
+              }}
               key={item.link}
-              // className={router.pathname === "/Article" ? "active" : ""}
+              className={pathname === item.link ? "active navbar_title" : "navbar_title"}
+              // style={{ color: active === item.name && "active" }}
             >
-              <Link href={item.link} style={{ textDecoration: "none" }}>
+              <Link
+                className="navbar_title"
+                href={item.link}
+                style={{ textDecoration: "none" }}
+              >
                 {item.name}
               </Link>
             </li>
@@ -61,4 +64,8 @@ export default function AppNavbar() {
       </nav>
     </div>
   );
-}
+};
+
+export default AppNavbar;
+
+

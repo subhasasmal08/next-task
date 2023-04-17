@@ -5,7 +5,7 @@ import { useState } from "react";
 import { usePathname } from "next/navigation";
 import { useRouter } from "next/navigation";
 
-const AppNavbar = () => {
+export default function AppNavbar(){
   const navbarArr = [
     {
       name: "Home",
@@ -34,7 +34,6 @@ const AppNavbar = () => {
   ];
   const pathname = usePathname();
   const router = useRouter()
-  const [active, setActive] = useState("Home");
   return (
     <div>
       {console.log(router)}
@@ -44,9 +43,6 @@ const AppNavbar = () => {
         <ul className="navbar_ul">
           {navbarArr.map((item) => (
             <li
-              onClick={() => {
-                setActive(item.name);
-              }}
               key={item.link}
               className={pathname === item.link ? "active navbar_title" : "navbar_title"}
               // style={{ color: active === item.name && "active" }}
@@ -66,6 +62,17 @@ const AppNavbar = () => {
   );
 };
 
-export default AppNavbar;
+// export default AppNavbar;
+
+// "use client"
+// import { useRouter } from 'next/navigation'
+// import React from 'react'
+
+// export default function AppNavbar() {
+//   const router = useRouter()
+//   return (
+//     <div>AppNavbar</div>
+//   )
+// }
 
 
